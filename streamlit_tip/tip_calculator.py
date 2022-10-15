@@ -24,8 +24,8 @@ else:
 
 result_total = (total_bill + total_bill * percentage/100)
 result =  result_total / no_of_people
-st.write(f"The total amount is {round(result_total, 2)}.")
+st.write(f"The total amount is € {round(result_total, 2)}")
 # rounded_result = round(result, 2)
 rounded_result = "{:.2f}".format(result)
 
-st.write(f"Each person should pay: ${rounded_result}")
+st.write(f"Each person should pay: € {rounded_result}")
