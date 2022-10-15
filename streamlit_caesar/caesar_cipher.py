@@ -1,7 +1,7 @@
 import streamlit as st
 # import art
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/']
 
 def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
@@ -31,7 +31,7 @@ st.write("(Kodierung auch bekannt unter dem Namen Caesar Cipher)")
 
 selection = ["encode", "decode"]
 direction = st.selectbox( "Wähle 'encode' um zu kodieren oder 'decode' um zu dekodieren: ", selection)
-text = st.text_input("Schreibe deine Nachricht:\n").lower()
+text = st.text_input("Schreibe deine Nachricht:\n") # .lower()
 shift_in = st.text_input("Gib die Kodierungszahl ein:\n")
 if shift_in == "":
   shift = 0
