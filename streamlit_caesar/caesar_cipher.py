@@ -9,10 +9,8 @@ def caesar(start_text, shift_amount, cipher_direction):
         shift_amount *= 1   
     elif cipher_direction == "decode": # this makes the program switch between encoding/decoding
         shift_amount *= -1
-    else:
-        st.write("Das ist keine zulässige Eingabe!")
     for letter in start_text:
-        if letter not in alphabet: 
+        if letter not in alphabet: # any character that is not in the alphabet will not be encrypted and stays the same
             new_letter = letter
         else:
             position = alphabet.index(letter) # gets the index of the character in the alphabet
@@ -28,11 +26,11 @@ def caesar(start_text, shift_amount, cipher_direction):
 # prints the start logo
 # st.write(art.logo)
 
-st.write("Willkommen bei Florians Kodierungsprogramm!")
-st.write("(auch bekannt unter dem Namen Caesar Cipher)")
+st.header("Willkommen bei Florians Kodierungsprogramm!")
+st.write("(Kodierung auch bekannt unter dem Namen Caesar Cipher)")
 
-# while True: 
-direction = st.text_input("Schreibe 'encode' um zu kodieren, schreibe 'decode' um zu dekodieren:\n")
+selection = ["encode", "decode"]
+direction = st.selectbox( "Wähle 'encode' um zu kodieren oder 'decode' um zu dekodieren: ", selection)
 text = st.text_input("Schreibe deine Nachricht:\n").lower()
 shift_in = st.text_input("Gib die Kodierungszahl ein:\n")
 if shift_in == "":
@@ -46,10 +44,5 @@ else:
       
 
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
-  # repeat = st.text_input("Willst du einen weiteren Text kodieren/dekodieren? Bitte schreibe 'ja' oder 'nein'. ")
-  # if repeat == "ja":
-  #   True
-  # else: 
-  #   st.write("Auf Wiedersehen!")
-  #   break
+
     
