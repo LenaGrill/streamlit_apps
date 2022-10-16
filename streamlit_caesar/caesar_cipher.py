@@ -5,9 +5,9 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
-    if cipher_direction == "encode": # this makes the program switch between encoding/decoding
+    if cipher_direction == "verschlüsseln": # this makes the program switch between encoding/decoding
         shift_amount *= 1   
-    elif cipher_direction == "decode": # this makes the program switch between encoding/decoding
+    elif cipher_direction == "entschlüsseln": # this makes the program switch between encoding/decoding
         shift_amount *= -1
     for letter in start_text:
         if letter not in alphabet: # any character that is not in the alphabet will not be encrypted and stays the same
@@ -21,16 +21,17 @@ def caesar(start_text, shift_amount, cipher_direction):
             #print(new_char)
         end_text += new_letter
     
-    st.write(f"Hier ist dein '{cipher_direction}' Resultat: {end_text}")
+    st.subheader(f"Hier ist dein '{cipher_direction}' Resultat: ") 
+    st.header(f"{end_text}")
 
 # prints the start logo
 # st.write(art.logo)
 
 st.header("Willkommen bei Florians Kodierungsprogramm!")
-st.write("(Kodierung auch bekannt unter dem Namen Caesar Cipher)")
+st.write("(Kodierung auch bekannt als Caesar Cipher)")
 
-selection = ["encode", "decode"]
-direction = st.selectbox( "Wähle 'encode' um zu kodieren oder 'decode' um zu dekodieren: ", selection)
+selection = ["verschlüsseln", "entschlüsseln"]
+direction = st.selectbox( "Wähle 'verschlüsseln' um zu kodieren oder 'entschlüsseln' um zu dekodieren: ", selection)
 text = st.text_input("Schreibe deine Nachricht:\n") # .lower()
 shift_in = st.text_input("Gib die Kodierungszahl ein:\n")
 if shift_in == "":
