@@ -33,7 +33,7 @@ st.write("(Kodierung auch bekannt als Caesar Cipher)")
 selection = ["verschlüsseln", "entschlüsseln"]
 direction = st.selectbox( "Wähle 'verschlüsseln' um zu kodieren oder 'entschlüsseln' um zu dekodieren: ", selection)
 text = st.text_input("Schreibe deine Nachricht:\n") # .lower()
-shift_in = st.text_input("Gib die Kodierungszahl ein:\n")
+shift_in = st.text_input("Gib hier die Codezahl ein:\n")
 if shift_in == "":
   shift = 0
 else:
